@@ -1255,6 +1255,25 @@ button:hover {
     }
 }
 
+/*GIF*/
+section {
+    position: relative;
+}
+
+.section-gif {
+    position: absolute;
+    width: 130px;
+    height: auto;
+    object-fit: contain;
+    z-index: 2;
+    pointer-events: none;
+}
+
+#about .section-gif {
+    top: 20px;
+    right: 30px;
+}
+
 /*Mobile*/
 @media (max-width: 768px) {
 
@@ -1329,7 +1348,6 @@ button:hover {
         gap: 14px;
     }
 
-    /* CONTACT */
     #contact {
         padding-left: 20px;
         padding-right: 20px;
@@ -1369,7 +1387,7 @@ button:hover {
         padding: 7px 7px 11px;
     }
 
-    /* Prevent text from overflowing */
+    
     p, h1, h2, h3 {
         overflow-wrap: break-word;
     }
@@ -1391,5 +1409,11 @@ html, body {
     .portfolio-label {
         font-size: 11px;
         letter-spacing: 2px;
+    }
+}
+@media (max-width: 768px) {
+    .section-gif {
+        width: 85px;
+        opacity: 0.9;
     }
 }

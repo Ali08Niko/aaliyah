@@ -172,3 +172,4 @@ function closeLightbox() {
 
     document.body.style.overflow = "";
 }
+

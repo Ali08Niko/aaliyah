@@ -24,12 +24,13 @@
 
 /*COLOR PALLET*/
 :root {
-  --primary-color: #f3e5cc;
-  --secondary-color: #c4483b;
-  --text-color: #333333;
-  --text-color-2: #c47b45;
-  --color-1: #fff2e9;
-  --color-2: #ffacac;
+    --main-bg: #100D16;
+    --section-bg: #241332;
+    --dark-amethyst: #48245F;
+    --accent: #7545A6;
+    --accent-light: #B69AD9;
+    --main-text: #E5D9F2;
+    --card-bg: #1B1424;
 }
 
 html {
@@ -38,28 +39,28 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: var(--primary-color);
-  color: var(--text-color);
+  background-color: var(--main-bg);
+  color: var(--main-text);
   margin: 0;
   padding: 0;
 }
 
 a {
-  color: var(--secondary-color);
+  color: var(--accent);
   text-decoration: none;
 }
 
 button {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-  border: none;
-  padding: 10px 20px;
+  background-color: var(--accent);
+  color: #fffdf8;
+  border: 1px solid var(--accent-light);
+  border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background-color: var(--color-1);
+  background-color: #48245F;
 }
 
 /*HEADER*/
@@ -69,14 +70,23 @@ button:hover {
     align-items: center;
     padding: 18px 50px;
 
-    background-color: var(--color-1);
-    border-bottom: 2px solid #e68739;
+    background: rgba(16, 13, 22, 0.92);
+    border-bottom: 1px solid rgba(182, 154, 217, 0.25);
+    backdrop-filter: blur(12px);
 
     position: sticky;
     top: 0;
     z-index: 1000;
 
     box-shadow: 0 3px 10px rgba(70, 45, 30, 0.08);
+}
+
+.top-header a {
+  color: var(--main-text);
+}
+
+.top-header a:hover {
+  color: var(--accent-light);
 }
 
 .header {
@@ -89,11 +99,11 @@ button:hover {
 }
 
 .header span {
-    color: #a2352a;
+    color: #7545A6;
 }
 
 .header:hover {
-    color: #c47b45;
+    color: #e5d9f2;
 }
 
 .nav-links {
@@ -109,23 +119,23 @@ button:hover {
     font-family: monospace;
     font-size: 16px;
     font-weight: normal;
-    color: var(--text-color-2);
+    color: var(--main-text);
     text-decoration: none;
 
     transition: all 0.3s ease;
 }
 
 .nav-links li a:hover {
-    color: #A34438;
-    border-bottom: 2px solid #A34438;
+    color: var(--accent-light);
+    border-bottom: 2px solid var(--accent);
     padding-bottom: 5px;
 }
 
 .music-btn {
-    background-color: #A34438;
-    color: #FFF8ED;
+    background-color: #48245F;
+    color: var(--main-text);
 
-    border: none;
+    border: 1px solid var(--accent-light);
     border-radius: 25px;
 
     padding: 11px 20px;
@@ -138,9 +148,10 @@ button:hover {
 }
 
 .music-btn:hover {
-    background-color: #78372F;
+    background-color: var(--accent);
+    color: #fff2e9;
     transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(70, 45, 30, 0.2);
+    box-shadow: 0 0px 12px rgba(182, 154, 217, 0.4);
 }
 
 @media (max-width: 768px) {
@@ -172,8 +183,9 @@ button:hover {
     gap: 50px;
 
     padding: 70px 10%;
-    background-color: #f5ebdd;
-    color: #563c2e;
+    background: radial-gradient(circle at top right, rgba(117, 69, 166, 0.2), transparent 45%),
+    var(--main-bg);
+    color: var(--main-text);
 
     overflow: hidden;
 }
@@ -184,13 +196,14 @@ button:hover {
     font-size: 10px;
     font-weight: lighter;
     letter-spacing: 3px;
-    color: #A34438;
+    color: var(--main-text);
 
-    background-color: #ead9c3;
+    background-color: #48245F;
     padding: 9px 15px;
     border-radius: 20px;
 
     margin-bottom: 20px;
+    border: 1px solid var(--accent);
 }
 
 .hero h1 {
@@ -198,14 +211,14 @@ button:hover {
     font-size: clamp(45px, 6vw, 78px);
     line-height: 1.05;
     font-weight: 900;
-    color: #563c2e;
+    color: var(--accent-light);
 
     margin: 0 0 25px;
     letter-spacing: -2px;
 }
 
 .hero h1 em {
-    color: #A34438;
+    color: var(--accent);
     font-style: italic;
 }
 
@@ -214,7 +227,7 @@ button:hover {
     font-family: Georgia, serif;
     font-size: 16px;
     line-height: 1.8;
-    color: #806A56;
+    color: var(--main-text);
 
     margin-bottom: 30px;
 }
@@ -234,8 +247,8 @@ button:hover {
 
 .primary {
     display: inline-block;
-    background-color: #A34438;
-    color: #FFF8ED;
+    background-color: var(--accent);
+    color: var(--main-text);
 
     padding: 15px 23px;
     border-radius: 30px;
@@ -246,20 +259,22 @@ button:hover {
     letter-spacing: 1px;
     text-decoration: none;
 
+    border: 1px solid var(--accent-light);
     transition: all 0.3s ease;
 }
 
 .primary:hover {
-    background-color: #78372F;
+    background-color: #48245F;
+    color: #fff2e9;
     transform: translateY(-4px);
-    box-shadow: 0 5px 12px rgba(70, 45, 30, 0.2);
+    box-shadow: 0 0px 15px rgba(182, 154, 217, 0.4);
 }
 
 .secondary {
     background-color: transparent;
-    color: #563C2E;
+    color: var(--accent-light);
 
-    border: 2px solid #B69A7A;
+    border: 2px solid #48245F;
     border-radius: 30px;
 
     padding: 13px 22px;
@@ -273,10 +288,11 @@ button:hover {
     transition: all 0.3s ease;
 }
 .secondary:hover {
-    background-color: #EAD9C3;
-    border-color: #A34438;
-    color: #A34438;
+    background-color: #48245F;
+    border-color: var(--accent-light);
+    color: var(--main-text);
     transform: translateY(-4px);
+    box-shadow: 0 0 12px rgba(182, 154, 217, 0.3);
 }
 
 /*IMAGE*/
@@ -292,16 +308,17 @@ button:hover {
     height: 450px;
     object-fit: cover;
 
-    border: 10px solid #FFF8ED;
+    border: 10px solid var(--main-text);
     border-radius: 180px 180px 20px 20px;
 
-    box-shadow: 10px 12px 0px #D8BFA2;
+    box-shadow: 10px 12px 0px #48245F;
     transform: rotate(2deg);
 
     transition: all 0.4s ease;
 }
 
 .hero-image img:hover {
+    box-shadow: 10px 12px 0px var(--accent);
     transform: rotate(0deg) translateY(-5px);
 }
 
@@ -328,6 +345,7 @@ button:hover {
     }
 }
 
+
 /*SURPRISE BUTTON*/
 .surprise-bubble {
     display: none;
@@ -339,11 +357,11 @@ button:hover {
     margin-top: 30px;
     padding: 20px;
 
-    background: #fff2e9;
-    border: 2px solid #c47b45;
+    background: #48245F;
+    border: 2px solid var(--accent-light);
     border-radius: 18px;
 
-    box-shadow: 4px 5px 0 #ffacac;
+    box-shadow: 4px 5px 0 var(--accent);
 
     z-index: 10;
 }
@@ -355,7 +373,7 @@ button:hover {
 
 .surprise-bubble p {
     margin: 0;
-    color: #333333;
+    color: var(--main-text);
 
     font-family: monospace;
     font-size: 15px;
@@ -364,7 +382,7 @@ button:hover {
 
 .bubble-icon {
     display: block;
-    color: #c4483b;
+    color: var(--accent-light);
     font-size: 20px;
     margin-bottom: 8px;
 }
@@ -384,7 +402,7 @@ button:hover {
 /*ABOUT SECTION*/
 #about {
     padding: 90px 10%;
-    background-color: #f3e5cc;
+    background-color: var(--section-bg);
     position: relative;
     overflow: hidden;
 }
@@ -397,7 +415,7 @@ button:hover {
 #about .sec h2 {
     font-family: monospace;
     font-size: clamp(32px, 4vw, 48px);
-    color: #563C2E;
+    color: var(--accent-light);
     margin: 0 0 12px;
 }
 
@@ -406,7 +424,7 @@ button:hover {
     font-family: monospace;
     font-size: 11px;
     letter-spacing: 2px;
-    color: #c4483b;
+    color: var(--accent);
 }
 
 #about .about-grid {
@@ -420,12 +438,12 @@ button:hover {
 
 #about .panel {
     position: relative;
-    background-color: #fff2e9;
+    background-color: var(--card-bg);
     padding: 40px;
-    border: 2px solid #B69A7A;
+    border: 2px solid #48245F;
     border-radius: 8px;
-    box-shadow: 7px 7px 0 #D8BFA2;
-    transition: transform 0.3s ease, box-shodow 0.3s ease;
+    box-shadow: 7px 7px 0 var(--section-bg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #about .panel:first-child {
@@ -438,13 +456,13 @@ button:hover {
 
 #about .panel:hover {
     transform: translateY(-7px) rotate(0deg);
-    box-shadow: 9px 12px #D8BFA2;
+    box-shadow: 9px 12px var(--accent);
 }
 
 #about .panel h3 {
     font-family: monospace;
     font-size: 23px;
-    color: #A34438;
+    color: var(--accent-light);
     margin: 0 0 20px;
     line-height: 1.4;
 }
@@ -453,7 +471,7 @@ button:hover {
     font-family: monospace;
     font-size: 16px;
     line-height: 1.9;
-    color: #806A56;
+    color: var(--main-text);
     margin: 0;
 }
 
@@ -463,7 +481,7 @@ button:hover {
     top: -20px;
     right: 20px;
     font-size: 25px;
-    color: #c4483b;
+    color: var(--accent-light);
 }
 
 #about .panel:last-child::before {
@@ -472,7 +490,7 @@ button:hover {
     bottom: 12px;
     right: 20px;
     font-size: 30px;
-    color: #c4483b;
+    color: var(--accent);
 }
 
 #about .tag-row {
@@ -484,9 +502,9 @@ button:hover {
 
 #about .tag {
     display: inline-block;
-    background-color: #ead9c3;
-    color: #78372f;
-    border: 1px solid #c47b45;
+    background-color: var(--section-bg);
+    color: var(--main-text);
+    border: 1px solid #48245F;
     border-radius: 20px;
     padding: 8px 16px;
     font-family: monospace;
@@ -495,7 +513,7 @@ button:hover {
 }
 
 #about .tag:hover {
-    background-color: #a34438;
+    background-color: var(--accent);
     color: #fff8ed;
     transform: translateY(-3px);
 }
@@ -507,27 +525,27 @@ button:hover {
 }
 
 .album-toggle {
-    border: 2px solid #563C2E;
+    border: 2px solid #48245F;
     border-radius: 30px;
     padding: 13px 25px;
-    background: #c4483b;
-    color: #fff2e9;
+    background: var(--accent);
+    color: var(--main-text);
     font: inherit;
     font-weight: 600;
     cursor: pointer;
-    box-shadow: 4px 4px 0 #563C2E;
+    box-shadow: 4px 4px 0 var(--section-bg);
     transition: 0.2s ease;
 }
 
 .album-toggle:hover {
     transform: translateY(-3px);
-    background: #a83c32;
-    box-shadow: 4px 7px 0 #563C2E;
+    background: #48245F;
+    box-shadow: 4px 7px 0 var(--section-bg);
 }
 
 .album-hint {
     margin-top: 12px;
-    color: #765744;
+    color: var(--accent-light);
     font-size: 0.9rem;
 }
 
@@ -535,10 +553,10 @@ button:hover {
     margin: 28px auto 10px;
     padding: 30px;
     max-width: 1050px;
-    background: #fff2e9;
-    border: 2px dashed #b98b68;
+    background: var(--card-bg);
+    border: 2px dashed #48245F;
     border-radius: 18px;
-    box-shadow: 5px 5px 0 rgba(86, 60, 46, 0.15);
+    box-shadow: 5px 5px 0 rgba(117, 69, 166, 0.15);
     animation: albumOpen 0.35s ease both;
 }
 
@@ -552,19 +570,19 @@ button:hover {
 }
 
 .gallery-kicker {
-    color: #c4483b;
+    color: var(--accent);
     font: 0.75rem monospace;
     letter-spacing: 2px;
 }
 
 .gallery-heading h3 {
     margin: 8px 0;
-    color: #563C2E;
+    color: var(--accent-light);
     font: 700 clamp(24px, 4vw, 34px) Georgia, serif;
 }
 
 .gallery-heading p {
-    color: #765744;
+    color: var(--main-text);
 }
 
 .gallery-grid {
@@ -576,9 +594,9 @@ button:hover {
 .gallery-photo {
     margin: 0;
     padding: 10px 10px 14px;
-    background: #fffdf8;
-    border: 1px solid #e2cdb8;
-    box-shadow: 2px 4px 9px rgba(86, 60, 46, 0.14);
+    background: var(--main-text);
+    border: 1px solid var(--accent-light);
+    box-shadow: 2px 4px 9px rgba(117, 69, 166, 0.18);
     transform: rotate(-1deg);
     transition: transform 0.2s ease;
 }
@@ -596,12 +614,12 @@ button:hover {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    background: #ead8c4;
+    background: var(--accent-light);
 }
 
 .gallery-photo figcaption {
     padding-top: 11px;
-    color: #765744;
+    color: var(--section-bg);
     text-align: center;
     font: italic 15px Georgia, serif;
 }
@@ -646,7 +664,7 @@ button:hover {
     position: fixed;
     z-index: 9999;
     inset: 0;
-    background: rgba(35, 25, 20, 0.92);
+    background: rgba(35, 13, 22, 0.95);
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -661,14 +679,14 @@ button:hover {
     max-width: 85%;
     max-height: 75vh;
     object-fit: contain;
-    border: 8px solid #fff2e9;
+    border: 8px solid var(--accent-light);
     border-radius: 5px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
     animation: zoomIn 0.25s ease;
 }
 
 .lightbox p {
-    color: #fff2e9;
+    color: var(--main-text);
     font-family: Georgia, serif;
     font-style: italic;
     font-size: 18px;
@@ -682,13 +700,13 @@ button:hover {
     right: 30px;
     background: none;
     border: none;
-    color: #fff2e9;
+    color: var(--main-text);
     font-size: 42px;
     cursor: pointer;
 }
 
 .lightbox-close:hover {
-    color: #ffacac;
+    color: var(--accent-light);
 }
 
 @keyframes zoomIn {
@@ -706,7 +724,7 @@ button:hover {
 /*EDUCATION*/
 #education {
     padding: 90px 10%;
-    background-color: #fff2e9;
+    background-color: var(--main-bg);
     position: relative;
 }
 
@@ -718,7 +736,7 @@ button:hover {
 #education .section-heading h2 {
     font-family: monospace;
     font-size: clamp(32px, 4vw, 48px);
-    color: #563c2e;
+    color: var(--accent-light);
     margin-bottom: 12px;
 }
 
@@ -726,12 +744,12 @@ button:hover {
     font-family: monospace;
     font-size: 11px;
     letter-spacing: 2px;
-    color: #c4483b;
+    color: var(--accent);
 }
 
 .education-subtitle {
     font-family: Georgia, serif;
-    color: #806a56;
+    color: var(--main-text);
     margin-top: 18px;
 }
 
@@ -748,7 +766,7 @@ button:hover {
     bottom: 0;
     left: 25px;
     width: 3px;
-    background: #c47b45;
+    background: #48245F;
 }
 
 #education .timeline-item {
@@ -767,33 +785,33 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #c4483b;
-    color: #fff8ed;
-    border: 4px solid #fff2e9;
+    background: var(--accent);
+    color: var(--main-text);
+    border: 4px solid var(--main-bg);
     border-radius: 50%;
     font-size: 23px;
-    box-shadow: 0 0 0 2px #c47b45;
+    box-shadow: 0 0 0 2px #48245F;
 }
 
 #education .timeline-card {
     flex: 1;
     padding: 28px 35px;
-    background: #f3e5cc;
-    border: 2px solid #b69a7a;
+    background: var(--card-bg);
+    border: 2px solid #48245F;
     border-radius: 8px;
-    box-shadow: 6px 6px 0 #d8bfa2;
+    box-shadow: 6px 6px 0 var(--section-bg);
     transition: all 0.3s ease;
 }
 
 #education .timeline-card:hover {
     transform: translateX(8px);
-    box-shadow: 9px 9px 0 #d8bfa2;
+    box-shadow: 9px 9px 0 var(--accent);
 }
 
 #education .year {
     display: inline-block;
-    background: #a34438;
-    color: #fff8ed;
+    background: var(--accent);
+    color: var(--main-text);
     padding: 7px 15px;
     border-radius: 20px;
     font-family: monospace;
@@ -807,26 +825,26 @@ button:hover {
     font-family: monospace;
     font-size: 10px;
     letter-spacing: 3px;
-    color: #c47b45;
+    color: var(--accent-light);
 }
 
 
 #education .timeline-card h3 {
     font-family: monospace;
-    color: #563c2e;
+    color: var(--accent);
     font-size: 23px;
     margin: 8px 0;
 }
 
 #education .timeline-card h4 {
-    color: #a34438;
+    color: var(--accent);
     font-family: Georgia, serif;
     font-size: 16px;
     margin: 0 0 12px;
 }
 
 #education .timeline-card p {
-    color: #806a56;
+    color: var(--main-text);
     font-family: Georgia, serif;
     font-size: 14px;
     line-height: 1.7;
@@ -837,7 +855,7 @@ button:hover {
 
 #portfolio {
     padding: 85px 8%;
-    background-color: #f3e5cc;
+    background-color: var(--section-bg);
     text-align: center;
 }
 
@@ -847,25 +865,25 @@ button:hover {
 }
 
 .portfolio-label {
-    color: #c4483b;
+    color: var(--accent);
     font-family: monospace;
     font-size: 13px;
     letter-spacing: 3px;
 }
 
 #portfolio h2 {
-    color: #563C2E;
+    color: var(--accent-light);
     font-family: monospace;
     font-size: clamp(32px, 4vw, 48px);
     margin: 12px 0 35px;
 }
 
 .portfolio-card {
-    background-color: #fff2e9;
-    border: 2px dashed #b98b68;
+    background-color: var(--card-bg);
+    border: 2px dashed #48245F;
     border-radius: 20px;
     padding: 55px 30px;
-    box-shadow: 7px 7px 0 rgba(86, 60, 46, 0.15);
+    box-shadow: 7px 7px 0 rgba(117, 69, 166, 0.15);
 }
 
 .portfolio-icon {
@@ -876,20 +894,20 @@ button:hover {
     height: 75px;
     margin: 0 auto 20px;
     border-radius: 50%;
-    background-color: #ffacac;
-    color: #563C2E;
+    background-color: #48245F;
+    color: var(--accent-light);
     font-size: 35px;
 }
 
 .portfolio-card h3 {
-    color: #563C2E;
+    color: var(--accent-light);
     font-family: Georgia, serif;
     font-size: clamp(22px, 3vw, 30px);
     margin-bottom: 18px;
 }
 
 .portfolio-card p {
-    color: #765744;
+    color: var(--main-text);
     line-height: 1.8;
     max-width: 550px;
     margin: 0 auto 15px;
@@ -903,9 +921,9 @@ button:hover {
     display: inline-block;
     margin-top: 20px;
     padding: 12px 20px;
-    background-color: #f3e5cc;
+    background-color: var(--section-bg);
     border-radius: 30px;
-    color: #c4483b;
+    color: var(--accent-light);
     font-family: Georgia, serif;
     font-style: italic;
 }
@@ -914,7 +932,7 @@ button:hover {
 
 #contact {
     padding: 90px 10%;
-    background-color: #f5ebdd;
+    background-color: var(--main-bg);
     position: relative;
 }
 
@@ -926,7 +944,7 @@ button:hover {
 #contact .section-heading h2 {
     font-family: monospace;
     font-size: clamp(32px, 4vw, 48px);
-    color: #563c2e;
+    color: var(--accent-light);
     margin-bottom: 12px;
 }
 
@@ -934,11 +952,11 @@ button:hover {
     font-family: monospace;
     font-size: 11px;
     letter-spacing: 2px;
-    color: #c4483b;
+    color: var(--accent);
 }
 
 .contact-subtitle {
-    color: #806a56;
+    color: var(--main-text);
     font-family: Georgia, serif;
     margin-top: 18px;
 }
@@ -954,18 +972,18 @@ button:hover {
 
 .contact-card {
     position: relative;
-    background: #fff2e9;
-    border: 2px solid #b69a7a;
+    background: var(--card-bg);
+    border: 2px solid #48245F;
     border-radius: 8px;
     padding: 40px;
-    box-shadow: 8px 8px 0 #d8bfa2;
+    box-shadow: 8px 8px 0 var(--section-bg);
     transform: rotate(-1deg);
     transition: 0.3s ease;
 }
 
 .contact-card:hover {
     transform: rotate(0deg) translateY(-5px);
-    box-shadow: 11px 12px 0 #d8bfa2;
+    box-shadow: 11px 12px 0 var(--accent);
 }
 
 .contact-stamp {
@@ -974,8 +992,8 @@ button:hover {
     right: 25px;
     width: 48px;
     height: 48px;
-    border: 2px dashed #c4483b;
-    color: #c4483b;
+    border: 2px dashed var(--accent);
+    color: var(--accent-light);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -987,24 +1005,24 @@ button:hover {
     font-family: monospace;
     font-size: 10px;
     letter-spacing: 2px;
-    color: #c47b45;
+    color: var(--accent);
 }
 
 .contact-card h3 {
     font-family: monospace;
     font-size: 25px;
-    color: #a34438;
+    color: var(--accent-light);
     margin: 15px 0 5px;
 }
 
 .location {
-    color: #806a56;
+    color: var(--main-text);
     font-family: Georgia, serif;
     font-size: 14px;
 }
 
 .contact-divider {
-    border-top: 2px dashed #d8bfa2;
+    border-top: 2px dashed #48245F;
     margin: 25px 0;
 }
 
@@ -1022,14 +1040,14 @@ button:hover {
     min-width: 38px;
     height: 38px;
     border-radius: 50%;
-    background: #ead9c3;
-    color: #a34438;
+    background: #48245F;
+    color: var(--accent-light);
     font-size: 19px;
 }
 
 .contact-item h4 {
     font-family: monospace;
-    color: #563c2e;
+    color: var(--accent-light);
     font-size: 15px;
     margin: 0 0 8px;
 }
@@ -1046,24 +1064,24 @@ button:hover {
 }
 
 .contact-item a {
-    color: #a34438;
+    color: var(--accent-light);
     text-decoration: none;
     transition: 0.3s ease;
 }
 
 .contact-item a:hover {
-    color: #c47b45;
+    color: var(--accent);
     text-decoration: underline;
 }
 
 .placeholder {
-    color: #a28c77;
+    color: var(--main-text);
     font-style: italic;
 }
 
 .contact-ending {
     text-align: right;
-    color: #c4483b;
+    color: var(--accent-light);
     font-family: Georgia, serif;
     font-style: italic;
     margin-top: 30px;
@@ -1074,10 +1092,10 @@ button:hover {
 }
 
 .decoration-paper {
-    background: #fff8ed;
-    border: 2px solid #d8bfa2;
+    background: var(--card-bg);
+    border: 2px solid #48245F;
     padding: 45px 35px;
-    box-shadow: 7px 7px 0 #d8bfa2;
+    box-shadow: 7px 7px 0 var(--section-bg);
     transform: rotate(2deg);
     position: relative;
 }
@@ -1087,14 +1105,14 @@ button:hover {
     position: absolute;
     top: 12px;
     left: 18px;
-    color: #c4483b;
+    color: var(--accent-light);
     font-size: 22px;
 }
 
 .small-note {
     font-family: monospace;
     font-size: 11px;
-    color: #c47b45;
+    color: var(--accent);
     letter-spacing: 1px;
 }
 
@@ -1102,13 +1120,13 @@ button:hover {
     font-family: Georgia, serif;
     font-size: 24px;
     line-height: 1.6;
-    color: #563c2e;
+    color: var(--main-text);
     font-weight: normal;
 }
 
 .decoration-heart {
     display: block;
-    color: #c4483b;
+    color: var(--accent);
     font-size: 35px;
     margin-top: 15px;
 }
@@ -1116,15 +1134,15 @@ button:hover {
 .decoration-caption {
     font-family: monospace;
     font-size: 11px;
-    color: #806a56;
+    color: var(--main-text);
     margin-top: 25px;
 }
 
 
 /*FOOTER*/
 .site-footer {
-    background: #563c2e;
-    color: #fff2e9;
+    background: var(--section-bg);
+    color: var(--main-text);
     padding: 55px 10% 20px;
     position: relative;
 }
@@ -1141,7 +1159,7 @@ button:hover {
 .footer-name {
     font-family: monospace;
     font-size: 25px;
-    color: #ffacac;
+    color: var(--accent-light);
     margin-bottom: 12px;
 }
 
@@ -1149,7 +1167,7 @@ button:hover {
     font-family: Georgia, serif;
     font-size: 14px;
     line-height: 1.7;
-    color: #ead9c3;
+    color: var(--main-text);
     max-width: 350px;
 }
 
@@ -1157,7 +1175,7 @@ button:hover {
     font-family: monospace;
     font-size: 12px;
     letter-spacing: 2px;
-    color: #ffacac;
+    color: var(--accent-light);
     margin-bottom: 18px;
 }
 
@@ -1172,7 +1190,7 @@ button:hover {
 }
 
 .footer-links a {
-    color: #fff2e9;
+    color: var(--main-text);
     text-decoration: none;
     font-family: Georgia, serif;
     font-size: 14px;
@@ -1180,12 +1198,12 @@ button:hover {
 }
 
 .footer-links a:hover {
-    color: #ffacac;
+    color: var(--accent-light);
     padding-left: 6px;
 }
 
 .footer-bottom {
-    border-top: 1px dashed #a28c77;
+    border-top: 1px dashed #48245F;
     padding-top: 20px;
     display: flex;
     justify-content: space-between;
@@ -1194,7 +1212,7 @@ button:hover {
     gap: 15px;
     font-family: monospace;
     font-size: 11px;
-    color: #d8bfa2;
+    color: var(--main-text);
 }
 
 .copyright,
@@ -1203,13 +1221,13 @@ button:hover {
 }
 
 .back-to-top {
-    color: #ffacac;
+    color: var(--accent-light);
     text-decoration: none;
     transition: 0.3s ease;
 }
 
 .back-to-top:hover {
-    color: #fff2e9;
+    color: var(--main-text);
 }
 
 @media (max-width: 768px) {
@@ -1253,25 +1271,6 @@ button:hover {
         flex-direction: column;
         text-align: center;
     }
-}
-
-/*GIF*/
-section {
-    position: relative;
-}
-
-.section-gif {
-    position: absolute;
-    width: 130px;
-    height: auto;
-    object-fit: contain;
-    z-index: 2;
-    pointer-events: none;
-}
-
-#about .section-gif {
-    top: 20px;
-    right: 30px;
 }
 
 /*Mobile*/
@@ -1387,7 +1386,6 @@ section {
         padding: 7px 7px 11px;
     }
 
-    
     p, h1, h2, h3 {
         overflow-wrap: break-word;
     }
@@ -1411,9 +1409,47 @@ html, body {
         letter-spacing: 2px;
     }
 }
+
+
+/*Gif*/
+.hero-image .hero-sticker {
+    position: absolute !important;
+
+    width: 150px !important;
+    height: auto !important;
+    max-width: none !important;
+
+    bottom: 15px;
+    right: -20px;
+
+    border: none !important;
+    outline: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+
+    object-fit: contain;
+    padding: 0;
+    margin: 0;
+
+    pointer-events: none;
+    animation: snoopyFloat 3s ease-in-out infinite;
+}
+
+@keyframes snoopyFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
 @media (max-width: 768px) {
-    .section-gif {
-        width: 85px;
-        opacity: 0.9;
+    .hero-image .hero-sticker {
+        width: 55px !important;
+        right: -10px;
+        bottom: 10px;
     }
 }
